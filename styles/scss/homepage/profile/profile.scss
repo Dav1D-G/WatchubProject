@@ -1,0 +1,84 @@
+.profile-page
+{
+    @apply bg-black;
+    @apply py-20;
+    @apply h-screen;
+    @apply flex justify-center items-center;
+
+    .profile-section
+    {
+        @apply w-full sm:w-3/4 md:w-1/2 lg:w-2/5;
+        @apply h-3/4;
+        .profile-title
+        {
+            @apply border-b border-[#FFFFFF] border-opacity-50;
+            @apply p-5;
+
+            p
+            {
+                @apply text-white;
+                @apply text-4xl;
+            }
+        }
+
+        .profile-config
+        {
+            @apply border-b border-[#FFFFFF] border-opacity-50;
+            @apply p-5;
+            @apply flex;
+
+            .profile-image
+            {
+                @apply basis-1/2;
+                @apply flex justify-center items-center;
+            }
+
+            .profile-form
+            {
+                @apply basis-1/2;
+                .profile-name
+                {
+                    @apply basis-1/2;
+                    @apply h-1/2;
+
+                    .input-name
+                    {
+                        @apply w-[100%];
+                        @apply focus:border-none;
+                        @apply focus:ring-0;
+                        @apply border-none;
+                        @apply outline-none;
+                        @apply rounded-md;
+                        @apply placeholder-[#494949];
+                    }
+                }
+
+            }
+        }
+
+        .profile-changes
+        {
+            @apply flex flex-wrap justify-center items-center;
+            @apply text-[#FFFFFF] text-opacity-50;
+            @apply text-xl;
+
+            .profile-save
+            {
+                @apply flex justify-center items-center;
+                @apply basis-2/5 lg:basis-2/5;
+                @apply m-2;
+                @apply py-2;
+                @apply border border-[#FFFFFF] border-opacity-50;
+                @apply rounded-md;
+                
+            }
+
+            .active-option
+            {
+                @apply bg-white;
+                @apply text-black;
+            }
+        }
+    }
+    
+}

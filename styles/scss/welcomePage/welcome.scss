@@ -1,0 +1,83 @@
+.welcome-title
+{
+    @apply lg:h-[850px] h-[750px];
+    @apply flex justify-center items-start;
+
+
+    section
+    { 
+        
+        @apply m-[10%] lg:w-3/5 md:w-3/4 w-4/5;
+        @apply h-[500px] md:h-[400px];
+        @apply bg-green-800 bg-opacity-30  rounded-md;
+        @apply flex flex-col justify-center items-center py-2;
+
+    
+        .title
+        {
+            @apply lg:w-1/2 md:w-3/5 w-4/5 pb-2;
+            @apply flex justify-center items-center;
+            @apply border-b-2 border-white;
+
+            p
+            {
+                @apply flex justify-center items-center;
+                @apply lg:text-7xl text-5xl;
+                @apply text-white;
+
+                .hub
+                {
+                    @apply text-[#00FF1E];
+                }
+            }  
+        }
+
+        .content
+        {
+          @apply  flex justify-center items-center;
+          @apply lg:w-3/5 w-4/5;
+            article
+            {
+                @apply text-center py-6 text-white font-thin;
+                @apply lg:text-xl text-lg;
+                strong
+                {
+                    @apply font-bold;
+                }
+            }
+        }
+
+        .button-get-started
+        {
+            @apply border-t-2 border-white;
+            @apply xl:w-1/4 lg:w-2/5 md:w-2/5 w-3/5;
+
+            button
+            {
+                @apply flex justify-center items-center;
+                @apply mt-2 p-2 rounded-md;
+                @apply bg-green-500 bg-opacity-80;
+                @apply w-full;
+
+                .get-started-text
+                {
+                    @apply basis-4/5;
+                    @apply flex justify-center items-center;
+                    text
+                    {
+                        @apply text-white text-lg font-medium;
+                    }
+                }
+                .arrow_right
+                {
+                    @apply basis-1/5;
+                    @apply flex justify-center items-center;
+                }
+            }
+        }
+
+        
+    }
+
+
+}

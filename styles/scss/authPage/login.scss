@@ -1,0 +1,308 @@
+.auth-layout
+{
+    @apply h-full;
+    @apply bg-[length:200vw_180vh];
+    
+
+    .underlay
+    {
+        @apply h-4/5;
+        @apply bg-black bg-opacity-90;
+        @apply flex justify-center items-center;
+        .card-auth
+        {
+            @apply h-5/6 w-3/4 sm:w-3/5 md:w-1/2 lg:w-1/2;
+            @apply opacity-70;
+            @apply rounded-md;
+            @apply bg-gradient-to-tr from-[#007D0F] to-[#002004];
+            box-shadow: 8px 8px 24px 0px rgba(0, 255, 132, 0.637);
+            @apply p-6;
+            
+            
+            .card-google-auth
+            {
+                @apply h-[12%];
+                @apply flex justify-center items-center;
+
+                .card-google-section
+                {
+                    @apply border rounded-3xl;
+                    @apply w-4/5 lg:w-1/2 xl:w-2/5;
+                    @apply h-3/4;
+                    @apply flex justify-center items-center;
+                    .card-google-image
+                    {
+                        @apply basis-1/5;
+                        @apply flex justify-center items-center;
+                    }
+
+                    .card-google-text
+                    {
+                        @apply basis-4/5;
+                        @apply flex justify-center items-center;
+
+                        p
+                        {
+                            @apply text-white;
+                            @apply text-sm;
+                        }
+                    }
+                }
+            }
+            .card-title
+            {
+                @apply h-[12%];
+                @apply flex justify-start items-center;
+
+                .card-title-section
+                {
+                    @apply ms-[10%] lg:ms-[25%] xl:ms-[30%];
+                    @apply w-full;
+                    @apply h-3/4;
+                    @apply flex;
+
+                    .sign-in
+                    {
+                        @apply flex justify-start items-center;
+                        @apply border-e-2 ;
+                        @apply w-2/5 md:w-1/4; 
+                        @apply text-white lg:text-base xl:text-xl;
+                    }
+
+                    .sign-up
+                    {
+                        @apply flex justify-end items-center;
+                        @apply w-1/2 sm:w-2/5 md:w-1/4;
+                        @apply text-white;
+                  
+
+                    }
+
+                    .is-active
+                    {
+                        @apply text-[18px] lg:text-xl xl:text-2xl;
+                        @apply font-bold;
+                    }
+                }
+
+            }
+            .card-inputs
+            {
+                @apply flex flex-col justify-center items-center;
+                @apply h-3/5;
+                
+                .card-sign-up
+                {
+                    @apply h-1/4;
+                    @apply flex flex-col justify-center items-center;
+                    @apply w-full;
+
+                    .card-input-section
+                    {
+                        @apply w-4/5 lg:w-1/2 xl:w-2/5;
+
+                        .card-input-title
+                        {
+                            p
+                            {
+                                @apply text-white;
+                                @apply font-semibold;
+                                @apply text-sm;
+                            }
+                        }
+                        .card-input-type
+                        {
+                            @apply flex;
+                            @apply w-full;
+                            @apply border-b;
+
+                            input
+                            {
+                                @apply focus:border-none;
+                                @apply focus:ring-0;
+                                @apply border-none;
+                                @apply focus:outline-none; 
+                                @apply focus:bg-transparent;
+
+                                &::placeholder
+                                {
+                                    @apply text-sm;
+                                    @apply text-[#BDBDBD];
+                                }
+
+                                &:focus
+                                {
+                                    @apply text-sm;
+                                    @apply text-white;
+                                }   
+                                @apply w-[95%];
+                                @apply bg-transparent;
+                                @apply outline-none;  
+                            }
+
+                            .password-rules
+                            {
+                                @apply w-[5%];
+                                @apply flex flex-col items-center justify-center;
+
+                                .level
+                                {
+                                    @apply mb-1;
+                                    @apply flex items-center justify-center;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                .card-sign-in
+                {
+                    @apply h-1/3;
+                    @apply flex flex-col justify-center items-center;
+                    @apply w-full;
+
+                    .card-input-section
+                    {
+                        @apply w-4/5 lg:w-1/2 xl:w-2/5;
+                        @apply relative;
+
+                        .card-input-title
+                        {
+                            p
+                            {
+                                @apply text-white;
+                                @apply font-semibold;
+                                @apply text-sm;
+                            }
+                        }
+                        .card-input-type
+                        {
+                            @apply w-full;
+                            @apply border-b;
+                            
+                            input
+                            {
+                              
+                                @apply focus:border-none;
+                                @apply focus:ring-0;
+                                @apply border-none;
+
+                                &::placeholder
+                                {
+                                    @apply text-sm;
+                                    @apply text-[#BDBDBD];
+                                }
+
+                                &:focus
+                                {
+                                    @apply text-sm;
+                                    @apply text-white;
+                                }
+
+                                @apply w-full;
+                                @apply bg-transparent;
+                                @apply outline-none;
+                                
+                                
+                            }
+                        }
+
+                        
+                    }
+                }
+
+            }
+
+            .card-check
+            {
+                @apply h-1/5;
+                @apply flex justify-center items-center;
+                
+                .card-check-section
+                {
+                    @apply h-full;
+                    @apply w-4/5 lg:w-1/2 xl:w-2/5;
+
+                    div
+                    {
+                        @apply h-full;
+                        .card-check-item
+                        {
+                            @apply h-1/2;
+                            @apply flex items-center justify-start;
+                            input
+                            {
+                                @apply w-[15px] h-[15px];
+                                @apply rounded-md;
+                                @apply outline-none;
+                                @apply border-none;
+                            }
+                            p
+                            {
+                                @apply ms-4;
+                                @apply text-[8px] sm:text-xs;
+                                @apply text-white;
+                            }
+                        }
+                    }
+
+                }
+            }
+            .card-button
+            {
+                @apply h-[15%];
+                @apply flex justify-center items-center;
+
+                button
+                {
+                    @apply w-3/5 lg:w-2/5 xl:w-1/4;
+                    @apply h-3/5;
+                    @apply rounded-3xl;
+                    @apply border;
+                    @apply text-white;
+                }
+            }
+
+            .card-social_media
+            {
+                @apply flex flex-col items-center justify-center;
+                .card-social-text
+                {
+                    @apply text-white;
+                }
+
+                .card-social-icons
+                {
+                    @apply mt-3;
+                    @apply w-1/2 sm:w-1/3 md:w-1/4;
+                    @apply flex items-center justify-around;
+                }
+            }
+            
+        }
+    }
+}
+
+
+.sign-in-h
+{
+    @apply h-3/5;
+}
+
+.sign-up-h
+{
+    @apply h-4/5;
+}
+
+.card-error-input
+{
+    @apply absolute;
+    @apply text-sm;
+    @apply text-[#FF0000];
+}
+
+.error
+{
+    @apply border-[#FF0000];
+}

@@ -1,0 +1,176 @@
+.offer-page
+{
+    @apply md:h-[800px];
+    @apply mt-3 mb-3;
+
+    section
+    {
+        @apply flex flex-col mt-4 md:mt-0;
+
+        .offer-title
+        {
+            @apply md:h-[200px];
+            @apply flex items-center justify-center;
+
+            div
+            {
+                @apply flex items-center justify-center;
+                @apply w-1/2 md:w-1/3 h-1/2;
+                @apply border-[#007D0F] border;
+                @apply p-3;
+
+                p
+                {
+                    @apply lg:text-7xl text-5xl;
+                    @apply text-white;
+                    @apply text-center;
+                }
+            }
+        }
+
+        .offer-plan
+        {
+            @apply flex flex-col;
+            @apply md:h-[600px];
+            @apply mt-4 md:mt-0;
+
+            .offer-sugestion
+            {
+                @apply flex items-center;
+                @apply h-[50px];
+                
+                p
+                {
+                    @apply ms-10;
+                    @apply text-3xl sm:text-4xl;
+                    @apply text-white;
+                }
+            }
+
+            .offer-menu-options
+            {
+                @apply md:h-[500px];
+                
+                @apply flex flex-wrap md:flex-nowrap justify-around items-center;
+                
+                .offer-option
+                {
+                    @apply h-[475px];
+                    @apply bg-[#007D0F];
+                    @apply bg-opacity-50;
+                    @apply xl:basis-1/4 lg:basis-2/6 lg:m-2 md:basis-2/6 md:m-1 sm:basis-1/2 sm:m-3 basis-3/4 m-3 ;
+                    @apply flex flex-col justify-start;
+                    @apply rounded-md;
+                    
+                    .popular
+                    {
+                        @apply h-[25px];
+                        @apply flex justify-center items-center;
+                        @apply bg-[#FF0000];
+
+                        p
+                        {
+                            @apply text-white;
+                        }
+                    }
+                    .empty-popular
+                    {
+                        @apply h-[25px];
+                    }
+
+                    .offer-type
+                    {
+                        @apply rounded-t-md;
+                        @apply h-[50px];
+                       
+                        @apply flex items-center;
+                        p
+                        {
+                            @apply w-1/4;
+                            @apply ms-5;
+                            @apply bg-[#00C017];
+                            @apply p-1;
+                            @apply rounded-3xl;
+                            @apply text-center;
+                            @apply text-white;
+                        }
+                    }
+                    .offer-price
+                    {
+                        @apply h-[50px];
+                        
+                        @apply flex items-center;
+                        p
+                        {
+                            @apply ms-5;
+                            @apply p-1;
+                            @apply text-center;
+                            @apply text-4xl;
+                            @apply text-white;
+                        }
+                    }
+                    .offer-feature
+                    {
+                        @apply rounded-b-md;
+                        @apply h-[300px];
+                        @apply m-2;
+
+                        p
+                        {
+                            @apply text-xl;
+                            @apply text-white;
+                        }
+                        
+                        ul
+                        {
+                            @apply ms-4;
+                            @apply list-disc;
+                            li
+                            {
+                                &::marker{
+                                    color: #00C017; 
+                                }
+
+                                @apply mt-1;
+                                @apply text-xs sm:text-xs md:text-[15px]  lg:text-sm font-thin;
+                                @apply text-white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .offer-button
+            {
+                @apply mt-5;
+                @apply flex items-center justify-center;
+                @apply h-[50px];
+
+                .offer-start-button
+                {
+                    @apply flex justify-center items-center;
+                    @apply w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6;
+                    @apply bg-[#00FF1E];
+                    @apply bg-opacity-50;
+                    @apply p-2;
+                    @apply rounded-md;
+                    @apply text-white;
+
+                    text
+                    {
+                        @apply w-1/2;
+                    }
+
+                }
+            }
+        }
+
+        
+}
+
+.is-popular
+{
+    @apply border-[#FF0000] border-4;
+}
+
+}

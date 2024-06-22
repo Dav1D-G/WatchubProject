@@ -1,0 +1,1 @@
+export const typeMovies = ["Comedy","Horror","Action","Fantasy","Romance","Family","Documentary","Thriller","Crime"];

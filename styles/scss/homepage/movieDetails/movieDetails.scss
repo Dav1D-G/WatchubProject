@@ -1,0 +1,148 @@
+.movie-details-page
+{
+    @apply flex flex-col justify-center items-center md:flex-row;
+    @apply bg-black;
+    @apply min-h-screen;
+    @apply py-5;
+    .movie-image
+    {
+        @apply basis-full md:basis-2/5;
+        @apply flex justify-center items-center;
+        @apply p-3;
+
+        img
+        {
+            @apply rounded-md;
+        }
+    }
+
+    .movie-details
+    {
+        @apply basis-full md:basis-3/5;
+        @apply p-3;
+
+        .movie-details-title
+        {
+            p
+            {
+                @apply text-white;
+                @apply text-4xl;
+            }
+        }
+
+        .movie-rating
+        {
+            @apply flex;
+            @apply mt-5;
+
+            .star-rating
+            {
+
+                @apply flex;
+            }
+
+            .value-rating
+            {
+                @apply ms-5;
+                @apply basis-1/2  sm:basis-3/4;
+
+                p
+                {
+                    @apply text-[#FF0000];
+
+                }
+            }
+        }
+
+        .movie-properties
+        {
+           @apply flex flex-col xl:flex-row;
+           @apply mt-5;
+
+           .movie-data
+           {
+                @apply basis-3/5;
+                @apply flex flex-wrap justify-center items-center;
+
+                p
+                {
+                    @apply basis-1/4;
+                    @apply flex justify-center items-center;
+                    @apply text-[#5F5F5F];
+                    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+                }
+           }
+
+           .button-play
+           {
+                @apply basis-2/5;
+                @apply flex justify-center items-center;
+                @apply mt-5 xl:mt-0;
+
+                .play
+                {
+                    @apply basis-3/5;
+                    @apply flex justify-center items-center;
+
+                    button
+                    {
+                        @apply basis-3/4;
+                        @apply flex justify-center items-center;
+                        @apply py-1;
+                        @apply rounded-2xl;
+                        @apply bg-[#FF0000];
+
+                        .arrow-right-icon
+                        {
+                            @apply me-2;
+                        }
+                        .play-context
+                        {
+                            @apply ms-2;
+                            @apply text-white;
+                            @apply text-xl;
+                        }
+                    }
+                }
+
+                .plus
+                {
+                    @apply basis-2/5;
+                    @apply flex justify-center items-center;
+                }
+           }
+        }
+
+        .movie-description
+        {
+            @apply mt-5;
+
+            .description-title
+            {
+                @apply text-white;
+                @apply text-xl;
+            }
+
+            .description-context
+            {
+                @apply text-white;
+            }
+        }
+
+        .movie-cast
+        {
+            @apply mt-5;
+
+            .movie-cast-title
+            {
+                @apply text-white;
+                @apply text-xl;
+            }
+
+            .movie-cast-actors
+            {
+                @apply flex flex-wrap justify-around;
+            }
+        }
+    }
+}
