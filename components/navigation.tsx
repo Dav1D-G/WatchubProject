@@ -7,22 +7,40 @@ import profile from '@/public/icons/profile.svg';
 import notify from '@/public/icons/notify.svg';
 import Image from 'next/image';
 import { typeMovies } from '@/utils/type-movies';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import arrow_up from '@/public/icons/arrow-up.svg';
 import { delay, motion, useAnimation } from 'framer-motion';
 import burger_menu from '@/public/icons/burger_menu.svg';
 import arrow_left from '@/public/icons/arrow-left.svg'
 import useNextMediaQuery from '@mui/material/useMediaQuery';
+import { usePathname } from 'next/navigation'
+
+function getPathToThirdSlash(url : string) {
+    const parts = url.split('/');
+    if(parts[2])
+        return 'movie'
+    if(parts[1])
+        return 'homepage'
+    return '';
+  }
+
 
 export function Navigation()
 {
     // check useCookies
     // check urlPage
+    const pathname = usePathname();
     const [hoverState, setHoverState] = useState(false);
     const arrowAnimation = useAnimation();
     const controls = useAnimation();
     const [showMovies , setShowMovies] = useState(false);
     const isMediumScreen = useNextMediaQuery('(min-width: 768px)');
+    const [trimmedPath, setTrimmedPath] = useState('');
+
+    useEffect(() => {
+        const pathToThirdSlash : string = getPathToThirdSlash(pathname);
+        setTrimmedPath(pathToThirdSlash);
+      }, [pathname]);
 
 
     const toggleHoverState = () => {
@@ -52,14 +70,109 @@ export function Navigation()
     return(
         <header className="nav-style">
 
-
-            {/* <nav className='un-register'>
+            {pathname == '/' ? <nav className='un-register'>
                 <Logo/>
                 <Language />
                 <LoginButton />
-            </nav> */}
+            </nav> : (
+            <>
+                {isMediumScreen ? 
+                <>
+                    <nav className='register'>
+                        <Logo/>
+                        <div className='pages'>
+                            <Link href={'/homepage'} className={`nav-pages ${trimmedPath == 'homepage' && "is-active-page"}`}>
+                                <p className='koulen-regular'>HOME</p>
+                            </Link>
+                            <div className={`nav-movies ${trimmedPath == 'movie' && "is-active-page"}`} onClick={()=>toggleHoverState()}>
+                                <p className='koulen-regular' >MOVIES</p>
+                                <motion.img animate={arrowAnimation} src={arrow_up.src} alt='arrow_down' className='arrow-menu'/>
+                                <div className={`expand-menu ${hoverState ? 'absolute' : 'hidden'}`}>
+                                    <ul className='list-type-movies'>
+                                        {typeMovies.map((el,index)=>(
+                                            <li key={index} className={`type-movie koulen-regular`}>
+                                                <Link href={`/homepage/movies/${el}`}>
+                                                    <p>{el}</p>
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                            {/* <Link href={'/homepage/my-list'} className='nav-pages'>
+                                <p className='koulen-regular'>MY LIST</p>
+                            </Link> */}
+                        </div>
+                        <div className='others'>
+                            <div className='notification'>
+                                <Image src={notify} alt='notify'/>
+                            </div>
+                            <div className='user-profile'>
+                                <Link href={'/homepage/profile'}>
+                                    <Image src={profile} alt='profile'/>
+                                </Link>
+                            </div>
+                            <Language />
+                        </div>
+                    </nav>
+                </> : 
+                <>
+                    <nav className="burger-menu">
+                        <Logo/>
+                        <div className='burger-button'>
+                            <div className={`burger-icon ${hoverState && "is-border-burger-active"}`} onClick={()=>handleButtonClick()}>
+                                <Image src={burger_menu} alt='burger_menu' width={60} height={60}/>
+                            </div>
+                        </div>
+                        <motion.div className={`burger-aside-menu `} initial="closed"
+                        animate={controls}
+                        variants={{
+                        open: { x: 0 },
+                        closed: { x: "-100%" },
+                        }}
+                        >
+                            <div className='aside-item'>
+                                <Link href={'/homepage'} onClick={()=>handleButtonClick()}>
+                                    <p className='koulen-regular'>HOME</p>
+                                </Link>
+                            </div>
+                            <div className='aside-item-movie'>
+                                <div className='movie-title' onClick={()=>{
+                                    setShowMovies(()=>!showMovies)
+                                    toggleHoverAsideItem()
+                                }}>
+                                    <p className='koulen-regular'>MOVIES</p>
+                                    <motion.img animate={arrowAnimation} src={arrow_left.src} alt='arrow-right'/>
+                                </div>
+                                <div className={`aside-list-movies ${showMovies ? "absolute": "hidden"}`}>
+                                    <ul className='aside-list-type-movies'>
+                                        {typeMovies.map((el,index)=>(
+                                            <li key={index} className={`aside-type-movie koulen-regular`}>
+                                                <Link href={`/homepage/movies/${el}`} onClick={()=>handleButtonClick()}>
+                                                    <p>{el}</p>
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='aside-item'>
+                                <Link href={'/homepage/my-list'} onClick={()=>handleButtonClick()}>
+                                    <p className='koulen-regular'>MY LIST</p>
+                                </Link>
+                            </div>
+                            <div className='aside-item'>
+                                <Link href={'/homepage/profile'} onClick={()=>handleButtonClick()}>
+                                    <p className='koulen-regular'>PROFILE</p>
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </nav>
+                    </>}
 
-            {isMediumScreen ? 
+                </>
+            )}
+            {/* {isMediumScreen ? 
             <>
                 <nav className='register'>
                     <Logo/>
@@ -151,7 +264,7 @@ export function Navigation()
                         </div>
                     </motion.div>
                 </nav>
-            </>}
+            </>} */}
 
 
            

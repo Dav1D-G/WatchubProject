@@ -77,6 +77,12 @@
                 @apply basis-0 md:basis-1/3;
                 @apply relative;
                 @apply flex justify-center items-center;
+                @apply text-white;
+                p
+                {
+                    
+                    @apply text-2xl;
+                }
                 .expand-menu
                 {
                     @apply mt-[510px] lg:mt-[560px] w-[200px] h-[400px] lg:w-[250px] lg:h-[450px];
