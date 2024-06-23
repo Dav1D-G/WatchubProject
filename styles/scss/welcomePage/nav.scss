@@ -12,7 +12,8 @@
 
         .logo
         {
-                @apply flex justify-center items-center  lg:basis-8/12 md:basis-7/12 basis-6/12 ;
+
+                @apply flex justify-start items-center  lg:basis-8/12 md:basis-7/12 basis-6/12 ;
         }
 
         .language
